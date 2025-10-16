@@ -13,9 +13,14 @@ window.addEventListener("DOMContentLoaded",function() {
     createTree(x,0,z);
   }
    //Task 2: Use the createCloud(...)  to add several clouds to the scene at various positions.
-  createCloud(0, 2, 0);
+    createCloud(0, 3, 0);
+    createCloud(4, 3, -6);
+    createCloud(2, 3, 4);
+    createCloud(-3, 3, -1);
    //Task 4: Use the createHouse(...)  to add several houses to the scene at various positions.
-  createHouse(0, 2, -2);
+    createHouse(0, 1, -2);
+    createHouse(2, 1, 2);
+    createHouse(5, 1, -5);
 })
 
 /* Task 1: Create a function createCloud that,
@@ -40,9 +45,15 @@ window.addEventListener("DOMContentLoaded",function() {
     sphere1.setAttribute("position",{x:1,y:1,z:1});
     sphere1.setAttribute("colors","yellow");
 
+    let sphere2 = document.createElement("a-sphere");
+    sphere.setAttribute("color","white");
+    sphere.setAttribute("position",{x:0,y:0,z:1});
+
     cloud.setAttribute("position",{x:x, y:y, z:z});
     cloud.append(sphere);
     cloud.append(sphere1);
+    cloud.append(sphere2);
+
     scene.append(cloud)
   }
 
@@ -59,13 +70,13 @@ function createHouse(x, y, z){
   let house = document.createElement("a-entity");
   
   let box = document.createElement("a-box");
-  box.setAttribute("color","green");
+  box.setAttribute("color","beige");
   box.setAttribute("position","0 0 0");
   house.append( box );
 
   let roof = document.createElement("a-cone");
   roof.setAttribute("position","0 1 0");
-  roof.setAttribute("color","brown");
+  roof.setAttribute("color","red");
   roof.setAttribute("radius","0.25");
   house.append( roof );
 
