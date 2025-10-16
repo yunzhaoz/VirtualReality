@@ -13,8 +13,9 @@ window.addEventListener("DOMContentLoaded",function() {
     createTree(x,0,z);
   }
    //Task 2: Use the createCloud(...)  to add several clouds to the scene at various positions.
-
+  createCloud(0, 2, 0);
    //Task 4: Use the createHouse(...)  to add several houses to the scene at various positions.
+  createHouse(0, 2, -2);
 })
 
 /* Task 1: Create a function createCloud that,
@@ -26,6 +27,25 @@ window.addEventListener("DOMContentLoaded",function() {
       6) Add the cloud entity to the scene
 */
 
+  function createCloud(x,y,z){
+    let scene = document.querySelector("a-scene");
+
+    let cloud = document.createElement("a-entity");
+
+    let sphere = document.createElement("a-sphere");
+    sphere.setAttribute("color","white");
+    sphere.setAttribute("position",{x:2,y:1,z:1});
+
+    let sphere1 = document.createElement("a-sphere");
+    sphere1.setAttribute("position",{x:1,y:1,z:1});
+    sphere1.setAttribute("colors","yellow");
+
+    cloud.setAttribute("position",{x:x, y:y, z:z});
+    cloud.append(sphere);
+    cloud.append(sphere1);
+    scene.append(cloud)
+  }
+
 /* Task 3: Create a function createHouse that,
       1) Accept an x and z position for where to place the house "entity"
       2) Create an entity to store all the components that will make up the house
@@ -35,6 +55,24 @@ window.addEventListener("DOMContentLoaded",function() {
       5) Set house entities position to those passed in to the function.
       6) Add the house entity to the scene
 */
+function createHouse(x, y, z){
+  let house = document.createElement("a-entity");
+  
+  let box = document.createElement("a-box");
+  box.setAttribute("color","green");
+  box.setAttribute("position","0 0 0");
+  house.append( box );
+
+  let roof = document.createElement("a-cone");
+  roof.setAttribute("position","0 1 0");
+  roof.setAttribute("color","brown");
+  roof.setAttribute("radius","0.25");
+  house.append( roof );
+
+  house.setAttribute("position",{x:x, y:y, z:z});
+  scene.append( house )
+}
+
 function createTree(x, y, z){
   let tree = document.createElement("a-entity");
   

@@ -1,12 +1,12 @@
 window.addEventListener("DOMContentLoaded",function() {
   //Challenge 1: Create a variable scene for the <a-scene> component in the HTML
-
+  let scene = document.querySelector(`a-scene`);
 
   //Challenge 2: Create a variable for <a-dodecahedron> and create it.
-
+  let dodecahedron = document.createElement(`a-dodecahedron`);
   
   //Challenge 3: Change the <a-dodecahedron>'s position, radius and color
-
+  
 
   //Challenge 4: Add the <a-dodecahedron> to the scene
 
