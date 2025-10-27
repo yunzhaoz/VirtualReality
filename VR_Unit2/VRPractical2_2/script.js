@@ -19,5 +19,6 @@ function loop(){
     sun = document.querySelector("#sun");
     sun.setAttribute("scale", {x:sun.getAttribute("scale").x-=0.01, y:sun.getAttribute("scale").y-=0.01, z:sun.getAttribute("scale").z-=0.01});
 
+
     window.requestAnimationFrame(loop);
 }
