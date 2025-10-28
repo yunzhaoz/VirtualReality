@@ -34,7 +34,7 @@ window.addEventListener("DOMContentLoaded",function() {
   for(let i = 0; i < 20; i++){
     let x = rnd(-20,20);
     let z = rnd(-20,20);
-    let snowfalke = new Snowfake(x, 1 , z);
+    let snowfalke = new Snowfake(x, 10 , z);
     snowfalkes.push(snowfake);
   }
   loop();
