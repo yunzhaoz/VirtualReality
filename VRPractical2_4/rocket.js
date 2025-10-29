@@ -10,7 +10,7 @@ class Rocket{
   
     let bottom = document.createElement("a-cylinder");
     bottom.setAttribute("position","0 0.5 0");
-    bottom.setAttribute("color","gray");
+    bottom.setAttribute("color","white");
     bottom.setAttribute("radius","1");
     bottom.setAttribute("height","3");
     this.obj.append( bottom );
