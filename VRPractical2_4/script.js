@@ -1,22 +1,39 @@
 let rnd = (l,u) => Math.floor(Math.random()*(u-l) + l);
-let scene;
+let scene, rockets = [], ufos = [];
+
 
 window.addEventListener("DOMContentLoaded",function() {
-  scene = document.querySelector("a-scene"); 
-  for(let i = 0; i < 100; i++){
-    let x = rnd(0,20);
-    let y = rnd(0,20);
-    let z = rnd(-20,20);
-    let rocket = new Rocket(x, y , z);
+  scene = document.querySelector("a-scene");
+  for(let i=0; i<100; i++){
+    let rocket = new Rocket(rnd(-50,50), rnd(-1,-10), rnd(-50,50));
+    rockets.push(rocket);
   }
+
+
+  for(let i=0; i<100; i++){
+    let ufo = new Ufo(rnd(-50,50), rnd(10,30), rnd(-50,50), rnd(3, 30)*0.01);
+    ufos.push(ufo);
+  }
+
 
   loop();
 })
 
-function loop(){
-  rocket.setAttribute("rotation", {x:rocket.getAttribute("position").x+=0.1, y:0, z:0} );
-  rocket.launch();
 
-  
+
+
+function loop(){
+
+
+  for(let rocket of rockets){
+    rocket.ascend();
+  }
+
+
+  for(let ufo of ufos){
+    ufo.invade();
+  }
+
+
   window.requestAnimationFrame( loop );
 }
