@@ -6,7 +6,7 @@ class Tree{
 
     this.obj = document.createElement("a-cone");
     this.obj.setAttribute("color","green");
-    this.obj.setAttribute("height",2);
+    this.obj.setAttribute("height",3);
     this.obj.setAttribute("position",{x:x,y:y,z:z});
     scene.append(this.obj);
 
