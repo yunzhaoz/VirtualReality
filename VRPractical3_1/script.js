@@ -1,4 +1,4 @@
-let carousel,balloon1,balloon2,surpriseBox;
+let carousel,balloon1,balloon2,surpriseBox,car;
 
 window.addEventListener("DOMContentLoaded",function() {
   carousel = document.getElementById("carousel-arms");
@@ -52,6 +52,7 @@ function loop(){
     balloon2.y += balloon2.dy; 
     balloon2.setAttribute("position",{x:-2, y:balloon2.y, z: 0});
   };
+
   window.requestAnimationFrame( loop );
 };
 
