@@ -1,4 +1,4 @@
-let scene, car, rocket;
+let scene,car,rocket;
 
 
 window.addEventListener("DOMContentLoaded",function() {

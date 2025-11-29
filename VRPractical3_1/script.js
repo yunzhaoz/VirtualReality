@@ -33,6 +33,14 @@ window.addEventListener("DOMContentLoaded",function() {
     balloon2.fly = true;
   });
 
+  rocket = document.getElementById("rocket");
+  rocket.y = 3
+  rocket.dy = 0.03;
+  rocket.fly= false;
+  rocket.addEventListener("mouseenter",function(){
+    rocket.fly = true;
+  });
+
   loop();
 });
 
@@ -52,7 +60,10 @@ function loop(){
     balloon2.y += balloon2.dy; 
     balloon2.setAttribute("position",{x:-2, y:balloon2.y, z: 0});
   };
-
+  if(rocket.fly){
+    rocket.y += rocket.dy; 
+    rocket.setAttribute("position",{x:-8, y:rocket.y, z: -2});
+  };
   window.requestAnimationFrame( loop );
 };
 
